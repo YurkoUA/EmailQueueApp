@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Mailing]
+(
+	[Id] INT IDENTITY NOT NULL,
+	[Message] NVARCHAR(1024) NOT NULL,
+	[SendingTime] DATETIME NOT NULL,
+	[CreatedDate] DATETIME NOT NULL CONSTRAINT [DF_Mailing_CreatedDate] DEFAULT(GETUTCDATE())
+
+	CONSTRAINT [PK_Mailing] PRIMARY KEY ([Id])
+)
