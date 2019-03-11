@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp", "EmailQueue
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EmailQueueApp.Database", "EmailQueueApp.Database\EmailQueueApp.Database.sqlproj", "{293DBD9F-E31B-4324-898B-56A218C6E9CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Data", "EmailQueueApp.Data\EmailQueueApp.Data.csproj", "{93ACA8E7-7E93-4992-8E4D-2A6E104C1BD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Infrastructure", "EmailQueue.Infrastructure\EmailQueueApp.Infrastructure.csproj", "{8940A334-E172-4029-B923-D6A453314D84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{293DBD9F-E31B-4324-898B-56A218C6E9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{293DBD9F-E31B-4324-898B-56A218C6E9CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{293DBD9F-E31B-4324-898B-56A218C6E9CB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{93ACA8E7-7E93-4992-8E4D-2A6E104C1BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93ACA8E7-7E93-4992-8E4D-2A6E104C1BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93ACA8E7-7E93-4992-8E4D-2A6E104C1BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93ACA8E7-7E93-4992-8E4D-2A6E104C1BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8940A334-E172-4029-B923-D6A453314D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8940A334-E172-4029-B923-D6A453314D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8940A334-E172-4029-B923-D6A453314D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8940A334-E172-4029-B923-D6A453314D84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

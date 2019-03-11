@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[USPCreateMailing]
-	@Message NVARCHAR(1024),
+	@Subject NVARCHAR(255),
+	@Body NVARCHAR(1024),
 	@SendingTime DATETIME,
 	@Addresses MailingAddressType READONLY
 AS
@@ -9,8 +10,8 @@ AS
 		DECLARE @MailingId INT
 		DECLARE @MailingAddressesIDs IntArrayType
 
-		INSERT INTO [Mailing]([Message], [SendingTime])
-		VALUES (@Message, @SendingTime)
+		INSERT INTO [Mailing]([Subject], [Body], [SendingTime])
+		VALUES (@Subject, @Body, @SendingTime)
 
 		SET @MailingId = SCOPE_IDENTITY()
 
