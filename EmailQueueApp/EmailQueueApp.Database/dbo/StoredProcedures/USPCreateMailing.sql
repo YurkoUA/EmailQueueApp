@@ -8,7 +8,10 @@ AS
 	BEGIN TRY
 
 		DECLARE @MailingId INT
-		DECLARE @MailingAddressesIDs IntArrayType
+		DECLARE @MailingAddresses TABLE (
+			[Id] INT,
+			[Email] VARCHAR(128)
+		)
 
 		INSERT INTO [Mailing]([Subject], [Body], [SendingTime])
 		VALUES (@Subject, @Body, @SendingTime)
@@ -16,12 +19,12 @@ AS
 		SET @MailingId = SCOPE_IDENTITY()
 
 		INSERT INTO [MailingAddress]([MailingId], [Email], [RepeatCount])
-		OUTPUT INSERTED.[Id] INTO @MailingAddressesIDs([Item])
+		OUTPUT INSERTED.[Id], INSERTED.[Email] INTO @MailingAddresses([Item], [Email])
 		SELECT	@MailingId, [a].[Email], [a].[RepeatCount]
 		FROM @Addresses AS [a]
 
 		SELECT @MailingId
-		SELECT [Item] FROM @MailingAddressesIDs
+		SELECT [Item], [Email] FROM @MailingAddresses
 
 	END TRY
 	BEGIN CATCH

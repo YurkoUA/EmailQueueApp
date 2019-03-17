@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Data", "Email
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Infrastructure", "EmailQueue.Infrastructure\EmailQueueApp.Infrastructure.csproj", "{8940A334-E172-4029-B923-D6A453314D84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Data.Entity", "EmailQueueApp.Data.Entity\EmailQueueApp.Data.Entity.csproj", "{A24455BE-703A-4B4B-A4FA-8DFC693E1675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Bootstrap", "EmailQueueApp.Bootstrap\EmailQueueApp.Bootstrap.csproj", "{4567BCB4-7E4B-4928-8050-F6A41979A1BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{8940A334-E172-4029-B923-D6A453314D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8940A334-E172-4029-B923-D6A453314D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8940A334-E172-4029-B923-D6A453314D84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A24455BE-703A-4B4B-A4FA-8DFC693E1675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A24455BE-703A-4B4B-A4FA-8DFC693E1675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A24455BE-703A-4B4B-A4FA-8DFC693E1675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A24455BE-703A-4B4B-A4FA-8DFC693E1675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4567BCB4-7E4B-4928-8050-F6A41979A1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4567BCB4-7E4B-4928-8050-F6A41979A1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4567BCB4-7E4B-4928-8050-F6A41979A1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4567BCB4-7E4B-4928-8050-F6A41979A1BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

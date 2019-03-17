@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EmailQueue.Infrastructure.Repositories
+namespace EmailQueueApp.Infrastructure.Repositories
 {
     public interface IRepository
     {
