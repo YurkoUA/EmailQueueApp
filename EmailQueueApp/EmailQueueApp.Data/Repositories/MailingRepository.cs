@@ -44,5 +44,9 @@ namespace EmailQueueApp.Data.Repositories
 
             return mailing;
         }
+
+        public void Dispose()
+        {
+        }
     }
 }

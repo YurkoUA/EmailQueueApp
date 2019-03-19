@@ -3,7 +3,7 @@
 	[Id] INT IDENTITY NOT NULL,
 	[MailingId] INT NOT NULL,
 	[Email] VARCHAR(128) NOT NULL,
-	[StatusId] INT NOT NULL CONSTRAINT [DF_MailingAddress_StatusId] DEFAULT(1),
+	[StatusId] INT NULL,
 	[RepeatCount] INT NOT NULL CONSTRAINT [DK_MailingAddress_Count] DEFAULT(1)
 
 	CONSTRAINT [PK_MailingAddress] PRIMARY KEY ([Id]),

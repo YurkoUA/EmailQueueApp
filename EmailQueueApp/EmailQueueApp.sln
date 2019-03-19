@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Data.Entity",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Bootstrap", "EmailQueueApp.Bootstrap\EmailQueueApp.Bootstrap.csproj", "{4567BCB4-7E4B-4928-8050-F6A41979A1BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.Business", "EmailQueueApp.Business\EmailQueueApp.Business.csproj", "{EBF69E0D-798D-4AF2-A807-16A76B3958CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailQueueApp.ViewModel", "EmailQueueApp.ViewModel\EmailQueueApp.ViewModel.csproj", "{972A8018-A062-4499-B636-9B76F3762BB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{4567BCB4-7E4B-4928-8050-F6A41979A1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4567BCB4-7E4B-4928-8050-F6A41979A1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4567BCB4-7E4B-4928-8050-F6A41979A1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF69E0D-798D-4AF2-A807-16A76B3958CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF69E0D-798D-4AF2-A807-16A76B3958CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF69E0D-798D-4AF2-A807-16A76B3958CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF69E0D-798D-4AF2-A807-16A76B3958CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{972A8018-A062-4499-B636-9B76F3762BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972A8018-A062-4499-B636-9B76F3762BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972A8018-A062-4499-B636-9B76F3762BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972A8018-A062-4499-B636-9B76F3762BB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

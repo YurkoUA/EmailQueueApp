@@ -69,6 +69,9 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -90,6 +93,14 @@
     <ProjectReference Include="..\EmailQueue.Infrastructure\EmailQueueApp.Infrastructure.csproj">
       <Project>{8940A334-E172-4029-B923-D6A453314D84}</Project>
       <Name>EmailQueueApp.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailQueueApp.Business\EmailQueueApp.Business.csproj">
+      <Project>{EBF69E0D-798D-4AF2-A807-16A76B3958CF}</Project>
+      <Name>EmailQueueApp.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailQueueApp.Data\EmailQueueApp.Data.csproj">
+      <Project>{93ACA8E7-7E93-4992-8E4D-2A6E104C1BD6}</Project>
+      <Name>EmailQueueApp.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
