@@ -3,6 +3,8 @@ using EmailQueueApp.Business.Services;
 using EmailQueueApp.Data.Repositories;
 using EmailQueueApp.Infrastructure.Repositories;
 using EmailQueueApp.Infrastructure.Services;
+using EmailQueueApp.Infrastructure.Interfaces;
+using EmailQueueApp.Infrastructure.Util;
 
 namespace EmailQueueApp.Bootstrap
 {
@@ -16,6 +18,8 @@ namespace EmailQueueApp.Bootstrap
 
             _container.RegisterType<IMailingRepository, MailingRepository>();
             _container.RegisterType<IMailingService, MailingService>();
+
+            _container.RegisterType<IMappingService, MappingService>();
         }
     }
 }

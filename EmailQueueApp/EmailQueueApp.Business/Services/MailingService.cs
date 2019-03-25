@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EmailQueueApp.Data.Entity;
 using EmailQueueApp.Infrastructure.Interfaces;
 using EmailQueueApp.Infrastructure.Repositories;
 using EmailQueueApp.Infrastructure.Services;
@@ -20,7 +21,10 @@ namespace EmailQueueApp.Business.Services
         {
             using (var repo = Factory.GetService<IMailingRepository>())
             {
-                throw new NotImplementedException();
+                var mailingEm = mappingService.ConvertTo<MailingEM>(mailing);
+                mailingEm = repo.CreateMailing(mailingEm);
+                mailing = mappingService.ConvertTo<MailingVM>(mailingEm);
+                return mailing;
             }
         }
     }

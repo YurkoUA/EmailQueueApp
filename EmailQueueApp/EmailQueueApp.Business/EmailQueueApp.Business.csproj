@@ -49,6 +49,10 @@
       <Project>{8940A334-E172-4029-B923-D6A453314D84}</Project>
       <Name>EmailQueueApp.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EmailQueueApp.Data.Entity\EmailQueueApp.Data.Entity.csproj">
+      <Project>{A24455BE-703A-4B4B-A4FA-8DFC693E1675}</Project>
+      <Name>EmailQueueApp.Data.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EmailQueueApp.ViewModel\EmailQueueApp.ViewModel.csproj">
       <Project>{972A8018-A062-4499-B636-9B76F3762BB8}</Project>
       <Name>EmailQueueApp.ViewModel</Name>

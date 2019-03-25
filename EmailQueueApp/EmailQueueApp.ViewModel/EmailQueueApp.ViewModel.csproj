@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressPM.cs" />
     <Compile Include="CreateMailingPM.cs" />
     <Compile Include="MailingAddressVM.cs" />
     <Compile Include="MailingVM.cs" />
