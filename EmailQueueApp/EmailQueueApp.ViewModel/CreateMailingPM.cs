@@ -8,6 +8,6 @@ namespace EmailQueueApp.ViewModel
         public string Subject { get; set; }
         public string Body { get; set; }
         public DateTime SendingTime { get; set; }
-        public IEnumerable<AddressPM> Adresses { get; set; }
+        public List<AddressPM> Adresses { get; set; } = new List<AddressPM>();
     }
 }

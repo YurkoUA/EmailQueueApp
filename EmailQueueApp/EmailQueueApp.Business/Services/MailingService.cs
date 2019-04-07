@@ -17,14 +17,15 @@ namespace EmailQueueApp.Business.Services
         {
         }
 
-        public MailingVM CreateMailing(MailingVM mailing)
+        public MailingVM CreateMailing(CreateMailingPM mailing)
         {
             using (var repo = Factory.GetService<IMailingRepository>())
             {
                 var mailingEm = mappingService.ConvertTo<MailingEM>(mailing);
                 mailingEm = repo.CreateMailing(mailingEm);
-                mailing = mappingService.ConvertTo<MailingVM>(mailingEm);
-                return mailing;
+
+                var mailingVM = mappingService.ConvertTo<MailingVM>(mailingEm);
+                return mailingVM;
             }
         }
     }

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using EmailQueueApp.Infrastructure.Database;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace EmailQueueApp.Data
 {
-    public class DbContext
+    public class DbContext : IDbContext
     {
         public DbContext(string connectionString)
         {

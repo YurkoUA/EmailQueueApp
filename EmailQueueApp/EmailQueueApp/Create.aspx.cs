@@ -4,52 +4,83 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EmailQueueApp.Infrastructure;
+using EmailQueueApp.Infrastructure.Services;
 using EmailQueueApp.ViewModel;
 
 namespace EmailQueueApp
 {
-    public partial class Create : Page
+    public partial class Create : BasePage
     {
-        private CreateMailingPM pageModel = new CreateMailingPM();
+        private CreateMailingPM pageModel;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void Addresses_UpdateItem(int id)
-        {
-            EmailQueueApp.ViewModel.AddressPM item = null;
-            // Load the item here, e.g. item = MyDataLayer.Find(id);
-            if (item == null)
+            if (!Page.IsPostBack)
             {
-                // The item wasn't found
-                ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
-                return;
+                Session["PageModel"] = null;
+                pageModel = new CreateMailingPM();
             }
-            TryUpdateModel(item);
-            if (ModelState.IsValid)
+            else
             {
-                // Save changes here, e.g. MyDataLayer.SaveChanges();
-
+                pageModel = Session["PageModel"] as CreateMailingPM;
+                pageModel.Subject = SubjectTextBox.Text;
+                pageModel.Body = BodyTextBox.Text;
+                pageModel.SendingTime = DateTime.Parse(SendingDatePicker.Text);
             }
         }
 
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void Addresses_DeleteItem(int id)
+        protected void Page_Unload(object sender, EventArgs e)
         {
+            Session["PageModel"] = pageModel;
+            SubjectTextBox.Text = pageModel.Subject;
+            BodyTextBox.Text = pageModel.Body;
+            SendingDatePicker.Text = pageModel.SendingTime.ToString("D");
+        }
+        
+        public void Addresses_UpdateItem(string guid)
+        {
+            var item = pageModel.Adresses.FirstOrDefault(a => a.Guid == guid);
 
+            if (item != null)
+            {
+                TryUpdateModel(item);
+            }
+        }
+        
+        public void Addresses_DeleteItem(string guid)
+        {
+            var item = pageModel.Adresses.FirstOrDefault(a => a.Guid == guid);
+            pageModel.Adresses.Remove(item);
         }
 
         protected void CreateBtn_Click(object sender, EventArgs e)
         {
-
+            using (var service = Factory.GetService<IMailingService>(RequestContext))
+            {
+                service.CreateMailing(pageModel);
+            }
         }
 
         public IQueryable<AddressPM> Addresses_GetData()
         {
-            return new List<AddressPM>().AsQueryable();
+            return (Session["PageModel"] as CreateMailingPM ?? new CreateMailingPM()).Adresses.AsQueryable();
+        }
+
+        protected void AddressAddBtn_Click(object sender, EventArgs e)
+        {
+            var address = new AddressPM
+            {
+                Email = EmailAddressTextBox.Text,
+                RepeatCount = int.Parse(RepeatCountTextBox.Text)
+            };
+
+            pageModel.Adresses.Add(address);
+
+            EmailAddressTextBox.Text = string.Empty;
+            RepeatCountTextBox.Text = string.Empty;
+
+            AddressesGrid.DataBind();
         }
     }
 }

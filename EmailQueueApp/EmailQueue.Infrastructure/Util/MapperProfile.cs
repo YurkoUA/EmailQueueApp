@@ -10,6 +10,8 @@ namespace EmailQueueApp.Infrastructure.Util
         {
             CreateMap<MailingAddressEM, MailingAddressVM>().ReverseMap();
             CreateMap<MailingEM, MailingVM>().ReverseMap();
+            CreateMap<AddressPM, MailingAddressEM>().ReverseMap();
+            CreateMap<CreateMailingPM, MailingEM>().ReverseMap();
         }
     }
 }

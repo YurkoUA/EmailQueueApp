@@ -1,1 +1,1 @@
-﻿:r Post-Delpoyment/01_tMailStatus_Insert.sql
+﻿:r Post-Deployment\01_tMailStatus_Insert.sql

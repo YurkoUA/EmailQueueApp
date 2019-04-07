@@ -1,9 +1,10 @@
-﻿using EmailQueueApp.ViewModel;
+﻿using System;
+using EmailQueueApp.ViewModel;
 
 namespace EmailQueueApp.Infrastructure.Services
 {
-    public interface IMailingService
+    public interface IMailingService : IDisposable
     {
-        MailingVM CreateMailing(MailingVM mailing);
+        MailingVM CreateMailing(CreateMailingPM mailing);
     }
 }

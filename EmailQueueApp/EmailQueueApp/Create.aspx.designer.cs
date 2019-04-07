@@ -13,31 +13,67 @@ namespace EmailQueueApp {
     public partial class Create {
         
         /// <summary>
-        /// Subject control.
+        /// SubjectTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Subject;
+        protected global::System.Web.UI.WebControls.TextBox SubjectTextBox;
         
         /// <summary>
-        /// Body control.
+        /// BodyTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Body;
+        protected global::System.Web.UI.WebControls.TextBox BodyTextBox;
         
         /// <summary>
-        /// Addresses control.
+        /// SendingDatePicker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Addresses;
+        protected global::System.Web.UI.WebControls.TextBox SendingDatePicker;
+        
+        /// <summary>
+        /// AddressesGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView AddressesGrid;
+        
+        /// <summary>
+        /// EmailAddressTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmailAddressTextBox;
+        
+        /// <summary>
+        /// RepeatCountTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RepeatCountTextBox;
+        
+        /// <summary>
+        /// AddressAddBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddressAddBtn;
         
         /// <summary>
         /// CreateBtn control.

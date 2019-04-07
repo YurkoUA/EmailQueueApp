@@ -19,12 +19,12 @@ AS
 		SET @MailingId = SCOPE_IDENTITY()
 
 		INSERT INTO [MailingAddress]([MailingId], [Email], [RepeatCount])
-		OUTPUT INSERTED.[Id], INSERTED.[Email] INTO @MailingAddresses([Item], [Email])
+		OUTPUT INSERTED.[Id], INSERTED.[Email] INTO @MailingAddresses([Id], [Email])
 		SELECT	@MailingId, [a].[Email], [a].[RepeatCount]
 		FROM @Addresses AS [a]
 
 		SELECT @MailingId
-		SELECT [Item], [Email] FROM @MailingAddresses
+		SELECT [Id], [Email] FROM @MailingAddresses
 
 	END TRY
 	BEGIN CATCH

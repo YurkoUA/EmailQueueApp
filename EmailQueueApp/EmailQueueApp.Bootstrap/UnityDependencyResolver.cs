@@ -1,10 +1,12 @@
 ﻿using Microsoft.Practices.Unity;
 using EmailQueueApp.Business.Services;
+using EmailQueueApp.Data;
 using EmailQueueApp.Data.Repositories;
 using EmailQueueApp.Infrastructure.Repositories;
 using EmailQueueApp.Infrastructure.Services;
 using EmailQueueApp.Infrastructure.Interfaces;
 using EmailQueueApp.Infrastructure.Util;
+using EmailQueueApp.Infrastructure.Database;
 
 namespace EmailQueueApp.Bootstrap
 {
@@ -15,6 +17,8 @@ namespace EmailQueueApp.Bootstrap
         public static void RegisterTypes(IUnityContainer container)
         {
             _container = container;
+
+            _container.RegisterType<IDbContext, DbContext>(new InjectionConstructor(AppConfigurationHelper.GetConnectionString("DefaultConnection")));
 
             _container.RegisterType<IMailingRepository, MailingRepository>();
             _container.RegisterType<IMailingService, MailingService>();
