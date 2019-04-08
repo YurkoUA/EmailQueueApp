@@ -28,5 +28,14 @@ namespace EmailQueueApp.Business.Services
                 return mailingVM;
             }
         }
+
+        public IEnumerable<MailingReportAddressVM> GetReport()
+        {
+            using (var repo = Factory.GetService<IMailingRepository>())
+            {
+                var addresses = repo.GetReport();
+                return mappingService.ConvertCollectionTo<MailingReportAddressVM>(addresses);
+            }
+        }
     }
 }

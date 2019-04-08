@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
@@ -43,6 +44,11 @@ namespace EmailQueueApp.Data.Repositories
             }
 
             return mailing;
+        }
+
+        public IEnumerable<MailingReportAddressEM> GetReport()
+        {
+            return ExecuteSP<MailingReportAddressEM>("USPGetAllAddresses");
         }
 
         public void Dispose()

@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="AddressPM.cs" />
     <Compile Include="CreateMailingPM.cs" />
+    <Compile Include="Enums\MailStatus.cs" />
     <Compile Include="MailingAddressVM.cs" />
+    <Compile Include="MailingReportAddressVM.cs" />
     <Compile Include="MailingVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

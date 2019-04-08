@@ -6,5 +6,6 @@
         <h1>Mailing Application</h1>
         <p class="lead">An application that allows creating mailing lists with multiple addresses and specify time to send.</p>
         <p><a href="Create.aspx" class="btn btn-primary btn-lg">Create &raquo;</a></p>
+        <p><a href="Report.aspx" class="btn btn-primary btn-lg">Report &raquo;</a></p>
     </div>
 </asp:Content>
