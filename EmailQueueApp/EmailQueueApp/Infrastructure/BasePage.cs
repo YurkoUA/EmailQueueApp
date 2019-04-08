@@ -34,5 +34,10 @@ namespace EmailQueueApp.Infrastructure
                 }
             }
         }
+
+        public void Refresh()
+        {
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+        }
     }
 }

@@ -7,7 +7,8 @@
 
     self.Initialize = function () {
         $(datePickerSelector).datetimepicker({
-
+            format: 'DD.MM.YYYY HH:mm',
+            defaultDate: moment.utc().toDate()
         });
     };
 

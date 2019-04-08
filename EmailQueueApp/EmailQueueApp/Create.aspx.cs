@@ -26,7 +26,13 @@ namespace EmailQueueApp
                 pageModel = Session["PageModel"] as CreateMailingPM;
                 pageModel.Subject = SubjectTextBox.Text;
                 pageModel.Body = BodyTextBox.Text;
-                pageModel.SendingTime = DateTime.Parse(SendingDatePicker.Text);
+
+                var isSuccess = DateTime.TryParse(SendingDatePicker.Text, out DateTime date);
+
+                if (isSuccess)
+                {
+                    pageModel.SendingTime = date;
+                }
             }
         }
 
@@ -60,6 +66,8 @@ namespace EmailQueueApp
             {
                 service.CreateMailing(pageModel);
             }
+
+            Refresh();
         }
 
         public IQueryable<AddressPM> Addresses_GetData()

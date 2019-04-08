@@ -18,9 +18,9 @@ AS
 
 		SET @MailingId = SCOPE_IDENTITY()
 
-		INSERT INTO [MailingAddress]([MailingId], [Email], [RepeatCount])
+		INSERT INTO [MailingAddress]([MailingId], [Email], [RepeatCount], [StatusId])
 		OUTPUT INSERTED.[Id], INSERTED.[Email] INTO @MailingAddresses([Id], [Email])
-		SELECT	@MailingId, [a].[Email], [a].[RepeatCount]
+		SELECT	@MailingId, [a].[Email], [a].[RepeatCount], 1
 		FROM @Addresses AS [a]
 
 		SELECT @MailingId
