@@ -44,6 +44,7 @@
     <Compile Include="AddressPM.cs" />
     <Compile Include="CreateMailingPM.cs" />
     <Compile Include="Enums\MailStatus.cs" />
+    <Compile Include="KeyValueVM.cs" />
     <Compile Include="MailingAddressVM.cs" />
     <Compile Include="MailingReportAddressVM.cs" />
     <Compile Include="MailingVM.cs" />

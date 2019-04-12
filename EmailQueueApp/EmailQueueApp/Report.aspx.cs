@@ -57,17 +57,21 @@ namespace EmailQueueApp
             }
         }
 
-        protected void ReportGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        public IQueryable<KeyValueVM> StatusDropDown_GetData()
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
+            var values = Enum.GetValues(typeof(MailStatus));
+            var enumList = new List<KeyValueVM>();
+
+            foreach (var item in values)
             {
-                DropDownList dropDown = (e.Row.FindControl("StatusDropDown") as DropDownList);
-                
-                foreach (var item in Enum.GetValues(typeof(MailStatus)))
+                enumList.Add(new KeyValueVM
                 {
-                    dropDown.Items.Add(new ListItem(Enum.GetName(typeof(MailStatus), item), item.ToString()));
-                }
+                    Key = ((int)item).ToString(),
+                    Value = Enum.GetName(typeof(MailStatus), item)
+                });
             }
+
+            return enumList.AsQueryable();
         }
     }
 }
