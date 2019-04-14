@@ -20,7 +20,7 @@ namespace EmailQueueApp.Data.Repositories
         public MailingEM CreateMailing(MailingEM mailing)
         {
             var sqlParams = new DynamicParameters();
-            var addresses = mailing.Adresses.AsDataTableParam().AsTableValuedParameter(Constants.MailingAddressType);
+            var addresses = mailing.Adresses.AsDataTableParam().AsTableValuedParameter(Constants.MAILING_ADDRESS_TYPE);
 
             sqlParams.Add("Subject", mailing.Subject, DbType.String);
             sqlParams.Add("Body", mailing.Body, DbType.String);

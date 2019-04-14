@@ -24,5 +24,23 @@ namespace EmailQueueApp.Infrastructure.Extensions
 
             return table;
         }
+
+        public static DataTable AsDataTableParam(this IEnumerable<MessageStatusEM> statusInfo)
+        {
+            var table = new DataTable();
+
+            table.Columns.Add("MailingAddressId");
+            table.Columns.Add("StatusId");
+
+            if (statusInfo?.Any() == true)
+            {
+                foreach (var item in statusInfo)
+                {
+                    table.Rows.Add(item.Id, item.StatusId);
+                }
+            }
+
+            return table;
+        }
     }
 }

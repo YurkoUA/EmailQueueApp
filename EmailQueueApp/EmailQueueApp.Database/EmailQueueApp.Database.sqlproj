@@ -73,6 +73,9 @@
     <Build Include="dbo\StoredProcedures\USPCreateMailing.sql" />
     <Build Include="dbo\Types\IntArrayType.sql" />
     <Build Include="dbo\StoredProcedures\USPGetAllAddresses.sql" />
+    <Build Include="dbo\StoredProcedures\USPServiceGetSendData.sql" />
+    <Build Include="dbo\Types\MessageStatusType.sql" />
+    <Build Include="dbo\StoredProcedures\USPServiceUpdateStatus.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Post-Deployment\01_tMailStatus_Insert.sql" />
