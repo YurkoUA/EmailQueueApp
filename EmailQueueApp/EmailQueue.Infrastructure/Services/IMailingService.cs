@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using EmailQueueApp.ViewModel;
+using EmailQueueApp.ViewModel.Enums;
 
 namespace EmailQueueApp.Infrastructure.Services
 {
@@ -8,5 +9,6 @@ namespace EmailQueueApp.Infrastructure.Services
     {
         MailingVM CreateMailing(CreateMailingPM mailing);
         IEnumerable<MailingReportAddressVM> GetReport();
+        void UpdateStatus(int mailingAddressId, MailStatus status);
     }
 }

@@ -8,6 +8,7 @@ using EmailQueueApp.Infrastructure.Interfaces;
 using EmailQueueApp.Infrastructure.Repositories;
 using EmailQueueApp.Infrastructure.Services;
 using EmailQueueApp.ViewModel;
+using EmailQueueApp.ViewModel.Enums;
 
 namespace EmailQueueApp.Business.Services
 {
@@ -35,6 +36,18 @@ namespace EmailQueueApp.Business.Services
             {
                 var addresses = repo.GetReport();
                 return mappingService.ConvertCollectionTo<MailingReportAddressVM>(addresses);
+            }
+        }
+
+        public void UpdateStatus(int mailingAddressId, MailStatus status)
+        {
+            using (var repo = Factory.GetService<IMailSenderRepository>())
+            {
+                repo.UpdateStatus(new[] { new MessageStatusEM
+                {
+                    Id = mailingAddressId,
+                    StatusId = (int)status
+                } });
             }
         }
     }

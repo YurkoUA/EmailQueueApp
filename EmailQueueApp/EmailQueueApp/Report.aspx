@@ -29,7 +29,7 @@
                     <asp:BoundField DataField="RepeatCount" HeaderText="Repeat Count" />
                     <asp:TemplateField HeaderText="Status">
                         <ItemTemplate>
-                            <asp:DropDownList runat="server" ID="StatusDropDown" CssClass="form-control"
+                            <asp:DropDownList runat="server" ID="StatusDropDown" CssClass="form-control app-mail-status"
                                 SelectMethod="StatusDropDown_GetData"
                                 DataTextField="Value"
                                 DataValueField="Key"
@@ -43,4 +43,9 @@
             </asp:GridView>
         </div>
     </div>
+
+    <script src="Scripts/Pages/report.js"></script>
+    <script>
+        Report.Initialize();
+    </script>
 </asp:Content>
