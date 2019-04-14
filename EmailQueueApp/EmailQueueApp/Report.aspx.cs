@@ -70,8 +70,13 @@ namespace EmailQueueApp
                     Value = Enum.GetName(typeof(MailStatus), item)
                 });
             }
-
+            
             return enumList.AsQueryable();
+        }
+
+        protected void StatusDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using EmailQueueApp.Data.Entity;
 using EmailQueueApp.ViewModel;
-using EmailQueueApp.ViewModel.Enums;
 
 namespace EmailQueueApp.Infrastructure.Util
 {
@@ -14,8 +13,7 @@ namespace EmailQueueApp.Infrastructure.Util
             CreateMap<AddressPM, MailingAddressEM>().ReverseMap();
             CreateMap<CreateMailingPM, MailingEM>().ReverseMap();
 
-            CreateMap<MailingReportAddressEM, MailingReportAddressVM>()
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => (MailStatus)src.StatusId));
+            CreateMap<MailingReportAddressEM, MailingReportAddressVM>();
         }
     }
 }

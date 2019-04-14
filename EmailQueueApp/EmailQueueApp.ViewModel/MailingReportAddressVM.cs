@@ -1,5 +1,4 @@
 ﻿using System;
-using EmailQueueApp.ViewModel.Enums;
 
 namespace EmailQueueApp.ViewModel
 {
@@ -10,6 +9,6 @@ namespace EmailQueueApp.ViewModel
         public string Subject { get; set; }
         public DateTime SendingTime { get; set; }
         public int RepeatCount { get; set; }
-        public MailStatus Status { get; set; }
+        public int StatusId { get; set; }
     }
 }

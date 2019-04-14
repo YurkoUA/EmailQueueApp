@@ -33,8 +33,8 @@
                                 SelectMethod="StatusDropDown_GetData"
                                 DataTextField="Value"
                                 DataValueField="Key"
-                                SelectedValue='<%# Bind("Status") %>'
-                            >
+                                SelectedValue='<%# Bind("StatusId") %>'
+                                OnSelectedIndexChanged="StatusDropDown_SelectedIndexChanged">
                             </asp:DropDownList>
                         </ItemTemplate>
                     </asp:TemplateField>
