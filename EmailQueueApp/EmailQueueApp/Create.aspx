@@ -7,12 +7,16 @@
     <form>
         <div class="form-group">
             <asp:Label runat="server" CssClass="control-label" AssociatedControlID="SubjectTextBox">Subject</asp:Label>
-            <asp:TextBox runat="server" ID="SubjectTextBox" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox runat="server" ID="SubjectTextBox" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="SubjectTextBox" 
+                ErrorMessage="The Subject field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group">
             <asp:Label runat="server" CssClass="control-label" AssociatedControlID="BodyTextBox">Body</asp:Label>
             <asp:TextBox runat="server" ID="BodyTextBox" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="BodyTextBox"
+                ErrorMessage="The Body field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group" style="position: relative">
@@ -30,14 +34,13 @@
                 DeleteMethod="Addresses_DeleteItem"
                 SelectMethod="Addresses_GetData"
                 DataKeyNames="Guid"
-                EmptyDataText="There are no addresses."
-                >
+                EmptyDataText="There are no addresses.">
 
                 <Columns>
                     <asp:BoundField DataField="Guid" Visible="false" />
                     <asp:BoundField DataField="Email" HeaderText="Email" />
                     <asp:BoundField DataField="RepeatCount" HeaderText="Repeat Count" />
-                    <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-sm"/>
+                    <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-sm" />
                     <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-sm" />
                 </Columns>
             </asp:GridView>
@@ -48,17 +51,23 @@
 
         <div class="form form-inline">
             <div class="form-group">
-                <asp:TextBox runat="server" ID="EmailAddressTextBox" CssClass="form-control" placeholder="Email Address"></asp:TextBox>
+                <asp:TextBox runat="server" ID="EmailAddressTextBox" CssClass="form-control" placeholder="Email Address" TextMode="Email"></asp:TextBox>
             </div>
 
             <div class="form-group">
-                <asp:TextBox runat="server" ID="RepeatCountTextBox" CssClass="form-control" placeholder="Repeat Count"></asp:TextBox>
+                <asp:TextBox runat="server" ID="RepeatCountTextBox" CssClass="form-control" placeholder="Repeat Count" TextMode="Number"></asp:TextBox>
             </div>
 
             <div class="form-group">
                 <asp:Button runat="server" ID="AddressAddBtn" CssClass="btn btn-default" Text="Add" OnClick="AddressAddBtn_Click" UseSubmitBehavior="false" />
             </div>
         </div>
+
+        <asp:RequiredFieldValidator runat="server" ControlToValidate="EmailAddressTextBox"
+                ErrorMessage="The Email field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
+        <br />
+        <asp:RequiredFieldValidator runat="server" ControlToValidate="RepeatCountTextBox"
+                ErrorMessage="The Repeat Count field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
 
 
         <div class="form-group">
