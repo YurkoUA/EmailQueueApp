@@ -49,6 +49,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Database\IDbContext.cs" />
     <Compile Include="Extensions\DataTableExtensions.cs" />
+    <Compile Include="Interfaces\IConfigurationService.cs" />
+    <Compile Include="Interfaces\IEmailSender.cs" />
     <Compile Include="Interfaces\IInternalRequestContext.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IMappingService.cs" />
@@ -60,8 +62,10 @@
     <Compile Include="Repositories\IMailingRepository.cs" />
     <Compile Include="Repositories\IMailSenderRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Services\IConsumerService.cs" />
     <Compile Include="Services\IMailingService.cs" />
     <Compile Include="Services\IMailSenderService.cs" />
+    <Compile Include="SmtpConfiguration.cs" />
     <Compile Include="Util\MapperProfile.cs" />
     <Compile Include="Util\MappingService.cs" />
   </ItemGroup>

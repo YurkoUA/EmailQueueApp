@@ -17,7 +17,7 @@ namespace EmailQueueApp.Notifications.Consumer
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new ConsumerService()
             };
             ServiceBase.Run(ServicesToRun);
         }
