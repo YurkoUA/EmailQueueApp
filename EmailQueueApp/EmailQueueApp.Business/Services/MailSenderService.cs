@@ -13,11 +13,11 @@ using EmailQueueApp.ViewModel.Enums;
 
 namespace EmailQueueApp.Business.Services
 {
-    public class MailSenderService : ServiceBase, IMailSenderService
+    public class MailSenderService : InternalServiceBase, IMailSenderService
     {
         private List<MessageStatusEM> statuses = new List<MessageStatusEM>();
 
-        public MailSenderService(IRequestContext requestContext) : base(requestContext)
+        public MailSenderService(IInternalRequestContext requestContext) : base(requestContext)
         {
         }
 

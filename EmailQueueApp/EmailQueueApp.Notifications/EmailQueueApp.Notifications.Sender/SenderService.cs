@@ -31,7 +31,7 @@ namespace EmailQueueApp.Notifications.Sender
                     senderServ.Send();
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 // TODO: Logger.
             }

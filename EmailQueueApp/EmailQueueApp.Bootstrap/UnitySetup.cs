@@ -6,12 +6,20 @@ namespace EmailQueueApp.Bootstrap
 {
     public static class UnitySetup
     {
-        static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
+        private static IUnityContainer _container;
+
+        private static IUnityContainer container
         {
-            var container = new UnityContainer();
-            RegisterTypes(container);
-            return container;
-        });
+            get
+            {
+                if (_container == null)
+                {
+                    _container = new UnityContainer();
+                    RegisterTypes(_container);
+                }
+                return _container;
+            }
+        }
 
         public static void RegisterTypes(IUnityContainer container)
         {
@@ -20,12 +28,12 @@ namespace EmailQueueApp.Bootstrap
 
         public static IUnityContainer GetUnityConfig()
         {
-            return container.Value;
+            return container;
         }
 
         public static IServiceProviderFactory CreateFactory(IInternalRequestContext context)
         {
-            return new ServiceProviderFactory(container.Value, context);
+            return new ServiceProviderFactory(container, context);
         }
     }
 }
