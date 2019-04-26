@@ -7,9 +7,9 @@ using EmailQueueApp.ViewModel.Enums;
 
 namespace EmailQueueApp.Business.Services
 {
-    public class ConsumerService : ServiceBase, IConsumerService
+    public class ConsumerService : InternalServiceBase, IConsumerService
     {
-        public ConsumerService(IRequestContext requestContext) : base(requestContext)
+        public ConsumerService(IInternalRequestContext requestContext) : base(requestContext)
         {
         }
 
