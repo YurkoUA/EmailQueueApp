@@ -16,7 +16,7 @@ namespace EmailQueueApp.Data.Repositories
 
         public IEnumerable<ServiceMailEM> GetSendData()
         {
-            var data = ExecuteSP<ServiceMailEM>("USPGetSendData");
+            var data = ExecuteSP<ServiceMailEM>("USPServiceGetSendData");
             return data;
         }
 

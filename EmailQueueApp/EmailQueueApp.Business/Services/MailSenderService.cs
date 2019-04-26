@@ -32,7 +32,7 @@ namespace EmailQueueApp.Business.Services
 
         private void Push(IEnumerable<ServiceMailEM> mails)
         {
-            var queueHost = ConfigurationManager.AppSettings["localhost"];
+            var queueHost = "localhost";
             var factory = new ConnectionFactory { HostName = queueHost };
 
             using (var connection = factory.CreateConnection())

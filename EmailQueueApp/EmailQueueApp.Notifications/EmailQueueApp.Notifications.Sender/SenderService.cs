@@ -1,5 +1,5 @@
-﻿using EmailQueueApp.Infrastructure.Services;
-using System;
+﻿using System;
+using EmailQueueApp.Infrastructure.Services;
 
 namespace EmailQueueApp.Notifications.Sender
 {
@@ -24,16 +24,9 @@ namespace EmailQueueApp.Notifications.Sender
 
         protected override void Send(object sender, EventArgs e)
         {
-            try
+            using (var senderServ = RequestContext.Factory.GetService<IMailSenderService>(RequestContext))
             {
-                using (var senderServ = RequestContext.Factory.GetService<IMailSenderService>(RequestContext))
-                {
-                    senderServ.Send();
-                }
-            }
-            catch (Exception ex)
-            {
-                // TODO: Logger.
+                senderServ.Send();
             }
         }
     }

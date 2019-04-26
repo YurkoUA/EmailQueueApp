@@ -27,6 +27,7 @@ namespace EmailQueueApp.Bootstrap
 
             _container.RegisterType<IMailingService, MailingService>();
             _container.RegisterType<IMailSenderService, MailSenderService>();
+            _container.RegisterType<IConsumerService, ConsumerService>();
             _container.RegisterType<IConfigurationService, ConfigurationService>(
                 new InjectionConstructor(ConfigurationManager.AppSettings, ConfigurationManager.ConnectionStrings)
             );
