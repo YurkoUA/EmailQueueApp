@@ -18,9 +18,7 @@
                 EmptyDataText="No addresses."
                 AutoGenerateColumns="false"
                 DataKeyNames="Id"
-                SelectMethod="ReportGrid_GetData"
-                DeleteMethod="ReportGrid_DeleteItem"
-                UpdateMethod="ReportGrid_UpdateItem">
+                SelectMethod="ReportGrid_GetData">
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="ID" />
                     <asp:BoundField DataField="Email" HeaderText="Email" />
@@ -34,6 +32,7 @@
                                 DataTextField="Value"
                                 DataValueField="Key"
                                 SelectedValue='<%# Bind("StatusId") %>'
+                                AutoPostBack="true"
                                 OnSelectedIndexChanged="StatusDropDown_SelectedIndexChanged">
                             </asp:DropDownList>
                         </ItemTemplate>

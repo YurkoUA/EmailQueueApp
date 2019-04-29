@@ -13,42 +13,11 @@ namespace EmailQueueApp
 {
     public partial class Report : BasePage<object>
     {
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
         public IQueryable<MailingReportAddressVM> ReportGrid_GetData()
         {
             using (var service = Factory.GetService<IMailingService>(RequestContext))
             {
                 return service.GetReport().AsQueryable();
-            }
-        }
-
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void ReportGrid_DeleteItem(int id)
-        {
-
-        }
-
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void ReportGrid_UpdateItem(int id)
-        {
-            EmailQueueApp.ViewModel.MailingReportAddressVM item = null;
-            // Load the item here, e.g. item = MyDataLayer.Find(id);
-            if (item == null)
-            {
-                // The item wasn't found
-                ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
-                return;
-            }
-            TryUpdateModel(item);
-            if (ModelState.IsValid)
-            {
-                // Save changes here, e.g. MyDataLayer.SaveChanges();
-
             }
         }
 
@@ -71,7 +40,18 @@ namespace EmailQueueApp
 
         protected void StatusDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var row = (sender as DropDownList)?.Parent?.Parent as GridViewRow;
+            var itemId = row?.Cells?[0]?.Text;
 
+            if (!string.IsNullOrWhiteSpace(itemId))
+            {
+                using (var service = Factory.GetService<IMailingService>(RequestContext))
+                {
+                    service.UpdateStatus(int.Parse(itemId), MailStatus.New);
+                }
+            }
+
+            Refresh();
         }
     }
 }
