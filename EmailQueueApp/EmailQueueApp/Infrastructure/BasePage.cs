@@ -37,7 +37,12 @@ namespace EmailQueueApp.Infrastructure
 
         public void Refresh()
         {
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            Redirect(Page.Request.Url.ToString());
+        }
+
+        public void Redirect(string url)
+        {
+            Page.Response.Redirect(url, true);
         }
     }
 }

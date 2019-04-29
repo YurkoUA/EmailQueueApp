@@ -67,7 +67,7 @@ namespace EmailQueueApp
                 service.CreateMailing(pageModel);
             }
 
-            Refresh();
+            Redirect("Report.aspx");
         }
 
         public IQueryable<AddressPM> Addresses_GetData()

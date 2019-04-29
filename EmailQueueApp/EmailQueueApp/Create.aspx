@@ -8,15 +8,11 @@
         <div class="form-group">
             <asp:Label runat="server" CssClass="control-label" AssociatedControlID="SubjectTextBox">Subject</asp:Label>
             <asp:TextBox runat="server" ID="SubjectTextBox" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" ControlToValidate="SubjectTextBox" 
-                ErrorMessage="The Subject field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group">
             <asp:Label runat="server" CssClass="control-label" AssociatedControlID="BodyTextBox">Body</asp:Label>
             <asp:TextBox runat="server" ID="BodyTextBox" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" ControlToValidate="BodyTextBox"
-                ErrorMessage="The Body field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group" style="position: relative">
@@ -45,35 +41,29 @@
                 </Columns>
             </asp:GridView>
         </div>
+    </form>
 
+    <hr />
 
-        <h4 class="title">Add address</h4>
+    <h4 class="title">Add address</h4>
 
-        <div class="form form-inline">
-            <div class="form-group">
-                <asp:TextBox runat="server" ID="EmailAddressTextBox" CssClass="form-control" placeholder="Email Address" TextMode="Email"></asp:TextBox>
-            </div>
-
-            <div class="form-group">
-                <asp:TextBox runat="server" ID="RepeatCountTextBox" CssClass="form-control" placeholder="Repeat Count" TextMode="Number"></asp:TextBox>
-            </div>
-
-            <div class="form-group">
-                <asp:Button runat="server" ID="AddressAddBtn" CssClass="btn btn-default" Text="Add" OnClick="AddressAddBtn_Click" UseSubmitBehavior="false" />
-            </div>
+    <div class="form form-inline">
+        <div class="form-group">
+            <asp:TextBox runat="server" ID="EmailAddressTextBox" CssClass="form-control" placeholder="Email Address" TextMode="Email"></asp:TextBox>
         </div>
-
-        <asp:RequiredFieldValidator runat="server" ControlToValidate="EmailAddressTextBox"
-                ErrorMessage="The Email field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
-        <br />
-        <asp:RequiredFieldValidator runat="server" ControlToValidate="RepeatCountTextBox"
-                ErrorMessage="The Repeat Count field is required." CssClass="text-danger"></asp:RequiredFieldValidator>
-
 
         <div class="form-group">
-            <asp:Button runat="server" ID="CreateBtn" CssClass="btn btn-primary" Text="Create" OnClick="CreateBtn_Click" />
+            <asp:TextBox runat="server" ID="RepeatCountTextBox" CssClass="form-control" placeholder="Repeat Count" TextMode="Number"></asp:TextBox>
         </div>
-    </form>
+
+        <div class="form-group">
+            <asp:Button runat="server" ID="AddressAddBtn" CssClass="btn btn-default" Text="Add" OnClick="AddressAddBtn_Click" UseSubmitBehavior="false" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <asp:Button runat="server" ID="CreateBtn" CssClass="btn btn-primary" Text="Create" OnClick="CreateBtn_Click" />
+    </div>
 
     <script src="Scripts/Pages/mailing-create.js"></script>
     <script>
