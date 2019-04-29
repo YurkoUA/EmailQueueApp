@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
@@ -10,6 +9,7 @@ using EmailQueueApp.Infrastructure.Interfaces;
 using EmailQueueApp.Infrastructure.Repositories;
 using EmailQueueApp.Infrastructure.Services;
 using EmailQueueApp.ViewModel.Enums;
+using EmailQueueApp.Infrastructure.Config;
 
 namespace EmailQueueApp.Business.Services
 {
@@ -21,19 +21,18 @@ namespace EmailQueueApp.Business.Services
         {
         }
 
-        public void Send()
+        public void Send(SenderConfig config)
         {
             using (var repo = Factory.GetService<IMailSenderRepository>())
             {
                 var data = repo.GetSendData();
-                Push(data);
+                Push(data, config);
             }
         }
 
-        private void Push(IEnumerable<ServiceMailEM> mails)
+        private void Push(IEnumerable<ServiceMailEM> mails, SenderConfig config)
         {
-            var queueHost = "localhost";
-            var factory = new ConnectionFactory { HostName = queueHost };
+            var factory = new ConnectionFactory { HostName = config.QueueHost };
 
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())

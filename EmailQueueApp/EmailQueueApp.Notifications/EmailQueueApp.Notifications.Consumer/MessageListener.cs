@@ -1,18 +1,17 @@
 ﻿using System.Configuration;
-using EmailQueueApp.Infrastructure;
 using RabbitMQ.Client;
+using EmailQueueApp.Infrastructure;
 
 namespace EmailQueueApp.Notifications.Consumer
 {
     public static class MessageListener
     {
-        private const string QUEUE_HOST_KEY = "queuehost";
         private static IConnection connection;
         private static IModel channel;
 
         public static void Start()
         {
-            var queueHost = ConfigurationManager.AppSettings[QUEUE_HOST_KEY].ToString();
+            var queueHost = ConfigurationManager.AppSettings["queuehost"].ToString();
             var factory = new ConnectionFactory { HostName = queueHost };
 
             connection = factory.CreateConnection();

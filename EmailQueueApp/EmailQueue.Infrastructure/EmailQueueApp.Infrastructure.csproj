@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\SenderConfig.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Database\IDbContext.cs" />
     <Compile Include="Extensions\DataTableExtensions.cs" />

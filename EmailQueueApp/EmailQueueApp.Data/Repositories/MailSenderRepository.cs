@@ -22,8 +22,13 @@ namespace EmailQueueApp.Data.Repositories
 
         public void UpdateStatus(IEnumerable<MessageStatusEM> statusInfo)
         {
-            var sqlParams = new DynamicParameters();
             var statusParam = statusInfo.AsDataTableParam().AsTableValuedParameter(Constants.MESSAGE_STATUS_TYPE);
+
+            var sqlParams = new DynamicParameters(new
+            {
+                StatusCollection = statusParam
+            });
+
             ExecuteSP("USPServiceUpdateStatus", sqlParams);
         }
 
