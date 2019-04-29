@@ -11,13 +11,8 @@ using EmailQueueApp.ViewModel.Enums;
 
 namespace EmailQueueApp
 {
-    public partial class Report : BasePage
+    public partial class Report : BasePage<object>
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
         // The return type can be changed to IEnumerable, however to support
         // paging and sorting, the following parameters must be added:
         //     int maximumRows

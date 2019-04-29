@@ -10,35 +10,29 @@ using EmailQueueApp.ViewModel;
 
 namespace EmailQueueApp
 {
-    public partial class Create : BasePage
+    public partial class Create : BasePage<CreateMailingPM>
     {
-        private CreateMailingPM pageModel;
-
-        protected void Page_Load(object sender, EventArgs e)
+        public Create()
         {
-            if (!Page.IsPostBack)
-            {
-                Session["PageModel"] = null;
-                pageModel = new CreateMailingPM();
-            }
-            else
-            {
-                pageModel = Session["PageModel"] as CreateMailingPM;
-                pageModel.Subject = SubjectTextBox.Text;
-                pageModel.Body = BodyTextBox.Text;
+            pageModel = new CreateMailingPM();
+        }
 
-                var isSuccess = DateTime.TryParse(SendingDatePicker.Text, out DateTime date);
+        public override void PageLoad()
+        {
+            pageModel = Session["PageModel"] as CreateMailingPM;
+            pageModel.Subject = SubjectTextBox.Text;
+            pageModel.Body = BodyTextBox.Text;
 
-                if (isSuccess)
-                {
-                    pageModel.SendingTime = date;
-                }
+            var isSuccess = DateTime.TryParse(SendingDatePicker.Text, out DateTime date);
+
+            if (isSuccess)
+            {
+                pageModel.SendingTime = date;
             }
         }
 
-        protected void Page_Unload(object sender, EventArgs e)
+        public override void PageUnload()
         {
-            Session["PageModel"] = pageModel;
             SubjectTextBox.Text = pageModel.Subject;
             BodyTextBox.Text = pageModel.Body;
             SendingDatePicker.Text = pageModel.SendingTime.ToString("D");
