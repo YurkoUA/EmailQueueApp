@@ -4,50 +4,48 @@
     <h2 class="title">Create Mailing</h2>
     <hr />
 
-    <form>
-        <div class="form-group">
-            <asp:Label runat="server" CssClass="control-label" AssociatedControlID="SubjectTextBox">Subject</asp:Label>
-            <asp:TextBox runat="server" ID="SubjectTextBox" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
-        </div>
+    <div class="form-group">
+        <asp:Label runat="server" CssClass="control-label" AssociatedControlID="SubjectTextBox">Subject</asp:Label>
+        <asp:TextBox runat="server" ID="SubjectTextBox" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+    </div>
 
-        <div class="form-group">
-            <asp:Label runat="server" CssClass="control-label" AssociatedControlID="BodyTextBox">Body</asp:Label>
-            <asp:TextBox runat="server" ID="BodyTextBox" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
-        </div>
+    <div class="form-group">
+        <asp:Label runat="server" CssClass="control-label" AssociatedControlID="BodyTextBox">Body</asp:Label>
+        <asp:TextBox runat="server" ID="BodyTextBox" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+    </div>
 
-        <div class="form-group" style="position: relative">
-            <asp:Label runat="server" CssClass="control-label" AssociatedControlID="SendingDatePicker">Sending Time</asp:Label>
-            <asp:TextBox runat="server" ID="SendingDatePicker" CssClass="form-control"></asp:TextBox>
-        </div>
+    <div class="form-group" style="position: relative">
+        <asp:Label runat="server" CssClass="control-label" AssociatedControlID="SendingDatePicker">Sending Time</asp:Label>
+        <asp:TextBox runat="server" ID="SendingDatePicker" CssClass="form-control"></asp:TextBox>
+    </div>
 
-        <div class="form-group">
-            <asp:Label runat="server" CssClass="control-label" AssociatedControlID="AddressesGrid">Addresses</asp:Label>
+    <div class="form-group">
+        <asp:Label runat="server" CssClass="control-label" AssociatedControlID="AddressesGrid">Addresses</asp:Label>
 
-            <asp:GridView runat="server" ID="AddressesGrid"
-                ItemType="EmailQueueApp.ViewModel.AddressPM"
-                CssClass="table table-hover table-bordered"
-                UpdateMethod="Addresses_UpdateItem"
-                DeleteMethod="Addresses_DeleteItem"
-                SelectMethod="Addresses_GetData"
-                DataKeyNames="Guid"
-                EmptyDataText="There are no addresses.">
+        <asp:GridView runat="server" ID="AddressesGrid"
+            ItemType="EmailQueueApp.ViewModel.AddressPM"
+            CssClass="table table-hover table-bordered"
+            UpdateMethod="Addresses_UpdateItem"
+            DeleteMethod="Addresses_DeleteItem"
+            SelectMethod="Addresses_GetData"
+            DataKeyNames="Guid"
+            EmptyDataText="There are no addresses.">
 
-                <Columns>
-                    <asp:BoundField DataField="Guid" Visible="false" />
-                    <asp:BoundField DataField="Email" HeaderText="Email" />
-                    <asp:BoundField DataField="RepeatCount" HeaderText="Repeat Count" />
-                    <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-sm" />
-                    <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-sm" />
-                </Columns>
-            </asp:GridView>
-        </div>
-    </form>
+            <Columns>
+                <asp:BoundField DataField="Guid" Visible="false" />
+                <asp:BoundField DataField="Email" HeaderText="Email" />
+                <asp:BoundField DataField="RepeatCount" HeaderText="Repeat Count" />
+                <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-sm" />
+                <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-sm" />
+            </Columns>
+        </asp:GridView>
+    </div>
 
     <hr />
 
     <h4 class="title">Add address</h4>
 
-    <div class="form form-inline">
+    <div id="add-address-form" class="form form-inline">
         <div class="form-group">
             <asp:TextBox runat="server" ID="EmailAddressTextBox" CssClass="form-control" placeholder="Email Address" TextMode="Email"></asp:TextBox>
         </div>
